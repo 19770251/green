@@ -277,9 +277,6 @@ public class SATCanonizerTest {
 		check(o1, "2<2", "0==1");
 	}
 
-	/**
-	 * Failing test case to demonstrate "improved" Travis output
-	 */
 	@Test
 	public void test18() {
 		IntConstant c1 = new IntConstant(2);
@@ -287,9 +284,7 @@ public class SATCanonizerTest {
 		Operation o1 = new Operation(Operation.Operator.LT, c1, c1);
 		Operation o2 = new Operation(Operation.Operator.LT, v1, c1);
 		Operation o3 = new Operation(Operation.Operator.AND, o1, o2);
-		check(o3, "(2<2)||(aa<2)", "0==201230"); // broken check
-		assert 1 == 2;
-		//check(o3, "(2<2)&&(aa<2)", "0==1"); // correct check
+		check(o3, "(2<2)&&(aa<2)", "0==1"); // correct check
 	}
 
 	
